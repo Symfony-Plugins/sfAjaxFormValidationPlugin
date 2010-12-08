@@ -1,0 +1,7 @@
+sf_ajax_form_validation_init:
+  url:   sfAjaxFormValidation/:form.js
+  param: { module: sfAjaxFormValidation, action: index }
+
+sf_ajax_form_validation_validate:
+  url:   sfAjaxFormValidation/:form/validate
+  param: { module: sfAjaxFormValidation, action: validate }

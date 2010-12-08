@@ -1,0 +1,49 @@
+# sfAjaxFormValidationPlugin plugin (for symfony 1.4) #
+
+The `sfAjaxFormValidationPlugin` is a symfony plugin that provides ajax form validation by sfForms validators.
+
+Each time an element of the form loses its focus (`onblur` event), an ajax request is sent to the plugin module (using jQuery).
+The module uses `sfForm` validators to validate the value of the form element.
+
+## Installation ##
+
+  * Install the plugin (via a package)
+
+        symfony plugin:install sfAjaxFormValidationPlugin
+
+  * Install the plugin (via a Subversion checkout)
+  
+        svn co http://svn.symfony-project.com/plugins/sfAjaxFormValidationPlugin/trunk plugins/sfAjaxFormValidationPlugin
+
+  * Activate the plugin in the `config/ProjectConfiguration.class.php`
+  
+        [php]
+        class ProjectConfiguration extends sfProjectConfiguration
+        {
+          public function setup()
+          {
+            $this->enablePlugins(array(
+              'sfDoctrinePlugin', 
+              'sfAjaxFormValidationPlugin',
+              '...'
+            ));
+          }
+        }
+
+  * Enable module in your `settings.yml`
+
+        all:
+          .settings:
+            enabled_modules: [default, sfAjaxFormValidation]
+
+  * Clear your cache
+
+        symfony cc
+
+## Usage ##
+
+Add the following code to your template where you have a form you want to be validated with ajax:
+  
+    [php]
+    <?php use_helper('sfAjaxFormValidation') ?>
+    <?php use_ajax_validation_for_form($form) ?>
