@@ -55,15 +55,15 @@ class sfAjaxFormValidationActions extends sfActions
     try
     {
         $validator->clean($field_value);
-        $json = "true";
+        $json = true;
     }
     catch (sfValidatorError $validatorError)
     {
       //TODO: Support I18N
-      //sfLoader::loadHelpers('I18N');
-      $json = '"' . str_replace('%value%', $field_value, $validatorError->getMessage()) . '"';
+      //sfContext::getInstance()->getConfiguration()->loadHelpers('I18N');
+      $json = str_replace('%value%', $field_value, $validatorError->getMessage());
     }
-    return $json;
+    return json_encode($json);
   }
 }
 
