@@ -5,12 +5,12 @@ jQuery(function($) {
     ["<?php echo implode('","', $field_names->getRawValue()) ?>"],
     function (i, field) {
       $("form :input[name='<?php echo $form->getName() ?>[" + field + "]']").bind('blur', function(ev) {
-        var value = $(ev.target).val();
+        var self = this;
         $.getJSON("<?php echo url_for("sf_ajax_form_validation_validate", array('form' => get_class($form))) ?>",
-            {field: field, value: value}, function(data) {
-          $(ev.target).prev(".error_list").remove();
+            {field: field, value: $(self).val()}, function(data) {
+          $(self).prev(".error_list").remove();
           if (typeof data == 'string') {
-            $(ev.target).before("<ul class=\"error_list\"><li>" + data + "</li></ul>")
+            $(self).before("<ul class=\"error_list\"><li>" + data + "</li></ul>")
           }
         });
       });
