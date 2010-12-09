@@ -2,22 +2,22 @@
 <package packagerversion="1.4.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
   <name>sfAjaxFormValidationPlugin</name>
   <channel>plugins.symfony-project.org</channel>
-  <summary>Ajax validation for sfForms.</summary>
-  <description>Ajax validation for sfForms.</description>
+  <summary>Adds ajax validation to sfForms using their validators. The plugin requires jQuery.</summary>
+  <description>Adds ajax validation to sfForms using their validators. The plugin requires jQuery.</description>
   <lead>
     <name>Yuri B. Lukyanov</name>
     <user>snaky</user>
     <email>y.snaky@gmail.com</email>
     <active>yes</active>
   </lead>
-  <date>2010-12-08</date>
+  <date>2010-12-09</date>
   <version>
-    <release>0.0.3</release>
-    <api>0.0.3</api>
+    <release>0.0.4</release>
+    <api>0.0.4</api>
   </version>
   <stability>
-    <release>alpha</release>
-    <api>alpha</api>
+    <release>beta</release>
+    <api>beta</api>
   </stability>
   <license uri="http://www.symfony-project.org/license">MIT license</license>
   <notes>-</notes>
@@ -60,6 +60,22 @@
   </phprelease>
   
   <changelog>
+    <release>
+     <version>
+       <release>0.0.4</release>
+       <api>0.0.4</api>
+     </version>
+     <stability>
+      <release>beta</release>
+      <api>beta</api>
+     </stability>
+     <license uri="http://www.symfony-project.com/license">MIT license</license>
+     <date>2010-12-09</date>
+     <license>MIT</license>
+     <notes>
+        README file changes. No code changes.
+     </notes>
+    </release>
     <release>
      <version>
        <release>0.0.3</release>

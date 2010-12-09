@@ -9,11 +9,19 @@ The module uses `sfForm` validators to validate the value of the form element.
 
   * Install the plugin (via a package)
 
-        symfony plugin:install sfAjaxFormValidationPlugin
+        symfony plugin:install -s beta sfAjaxFormValidationPlugin
 
   * Install the plugin (via a Subversion checkout)
   
         svn co http://svn.symfony-project.com/plugins/sfAjaxFormValidationPlugin/trunk plugins/sfAjaxFormValidationPlugin
+
+  * Install the plugin (via a Subversion externals)
+  
+        svn pg svn:externals plugins > plugins.externals
+        echo 'sfAjaxFormValidationPlugin http://svn.symfony-project.com/plugins/sfAjaxFormValidationPlugin/trunk' >> plugins.externals
+        svn ps svn:externals --file plugins.externals plugins
+        svn ci plugins
+        svn up plugins
 
   * Activate the plugin in the `config/ProjectConfiguration.class.php`
   
@@ -47,3 +55,8 @@ Add the following code to your template where you have a form you want to be val
     [php]
     <?php use_helper('sfAjaxFormValidation') ?>
     <?php use_ajax_validation_for_form($form) ?>
+
+## TODO ##
+
+  * Support embedded forms
+  * Support global form errors?
